@@ -90,6 +90,10 @@
             echo "<br>";
             echo $gender;
         ?>
-        
+        <?php
+            $original = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae similique tempore incidunt corporis molestias quaerat eos consequatur dignissimos, temporibus ad!';
+            $encode = gzcompress($original);
+            echo $encode;
+        ?>
     </body>
 </html>
