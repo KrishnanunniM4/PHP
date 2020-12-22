@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <video src="/ems/webpage/bgvideo.mp4" muted loop autoplay></video>
+        <video src="webpage/bgvideo.mp4" muted loop autoplay></video>
     </section>
     <!--About-->
     <section class="about" id="about">
@@ -76,7 +76,7 @@
         <div class="container">
             <div class="card" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-400px;">
                 <div class="cardBx">
-                    <img src="/ems/webpage/program.jpg">
+                    <img src="webpage/program.jpg">
                 </div>
                 <div class="cardContent">
                     <div>
@@ -88,7 +88,7 @@
             </div>
             <div class="card" data-center-center="opacity:1;bottom:0;" data-0-bottom="opacity:0;bottom:-400px;">
                 <div class="cardBx">
-                    <img src="/ems/webpage/stock.jpg">
+                    <img src="webpage/stock.jpg">
                 </div>
                 <div class="cardContent">
                     <div>
@@ -100,7 +100,7 @@
             </div>
             <div class="card" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:-400px;">
                 <div class="cardBx">
-                    <img src="/ems/webpage/gamedev.png">
+                    <img src="webpage/gamedev.png">
                 </div>
                 <div class="cardContent">
                     <div>
@@ -112,7 +112,7 @@
             </div>
             <div class="card" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-400px;">
                 <div class="cardBx">
-                    <img src="/ems/webpage/smartui.jpg">
+                    <img src="webpage/smartui.jpg">
                 </div>
                 <div class="cardContent">
                     <div>
@@ -124,7 +124,7 @@
             </div>
             <div class="card" data-center-center="opacity:1;bottom:0;" data-0-bottom="opacity:0;bottom:-400px;">
                 <div class="cardBx">
-                    <img src="/ems/webpage/cozmo.jpg">
+                    <img src="webpage/cozmo.jpg">
                 </div>
                 <div class="cardContent">
                     <div>
@@ -136,7 +136,7 @@
             </div>
             <div class="card" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:-400px;">
                 <div class="cardBx">
-                    <img src="/ems/webpage/olympiad.jpg">
+                    <img src="webpage/olympiad.jpg">
                 </div>
                 <div class="cardContent">
                     <div>
@@ -193,14 +193,14 @@
         <h2 class="heading" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:500px;">Our Sponsors</h2>
         <p class="text" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:500px;">Aquila, the three day fiesta, attracts tech-wits and creative minds from over 900 colleges across the nation, flowing in to test their capabilities and have an enthralling and fruitful time. Countless heads turn this way during Aquila, hoping to become a part of an endeavor that is nerve-racking and filled with euphoria, all at once.Being a part of Aquila gives you a chance to associate yourselves with The National Institute of Technology, Calicut ranked 28th national wide, and thereby build an everlasting relationship with the institution, an unavoidable part of Kerala history.</p>
         <div class="imgBx">
-            <img src="/ems/webpage/brand1.png">
-            <img src="/ems/webpage/brand2.png">
-            <img src="/ems/webpage/brand3.png">
-            <img src="/ems/webpage/brand4.png">
-            <img src="/ems/webpage/brand5.png">
-            <img src="/ems/webpage/brand6.png">
-            <img src="/ems/webpage/brand7.png">
-            <img src="/ems/webpage/brand8.png">
+            <img src="webpage/brand1.png">
+            <img src="webpage/brand2.png">
+            <img src="webpage/brand3.png">
+            <img src="webpage/brand4.png">
+            <img src="webpage/brand5.png">
+            <img src="webpage/brand6.png">
+            <img src="webpage/brand7.png">
+            <img src="webpage/brand8.png">
         </div>
     </section>
     <!--Gallery-->
@@ -208,16 +208,16 @@
         <h2 class="heading" style="text-align: center;" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:500px;">Gallery</h2>
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/ems/webpage/img1.jpg"></div>
-                <div class="swiper-slide"><img src="/ems/webpage/img2.jpg"></div>
-                <div class="swiper-slide"><img src="/ems/webpage/img3.jpg"></div>
-                <div class="swiper-slide"><img src="/ems/webpage/img4.jpg"></div>
-                <div class="swiper-slide"><img src="/ems/webpage/img5.jpg"></div>
-                <div class="swiper-slide"><img src="/ems/webpage/img6.jpg"></div>
-                <div class="swiper-slide"><img src="/ems/webpage/img7.jpg"></div>
-                <div class="swiper-slide"><img src="/ems/webpage/img8.jpg"></div>
-                <div class="swiper-slide"><img src="/ems/webpage/img9.jpg"></div>
-                <div class="swiper-slide"><img src="/ems/webpage/img10.jpg"></div>
+                <div class="swiper-slide"><img src="webpage/img1.jpg"></div>
+                <div class="swiper-slide"><img src="webpage/img2.jpg"></div>
+                <div class="swiper-slide"><img src="webpage/img3.jpg"></div>
+                <div class="swiper-slide"><img src="webpage/img4.jpg"></div>
+                <div class="swiper-slide"><img src="webpage/img5.jpg"></div>
+                <div class="swiper-slide"><img src="webpage/img6.jpg"></div>
+                <div class="swiper-slide"><img src="webpage/img7.jpg"></div>
+                <div class="swiper-slide"><img src="webpage/img8.jpg"></div>
+                <div class="swiper-slide"><img src="webpage/img9.jpg"></div>
+                <div class="swiper-slide"><img src="webpage/img10.jpg"></div>
             </div>
         </div>
     </section>
@@ -228,7 +228,7 @@
             <div class="teamContainer">
                 <div class="teamCard">
                     <div class="teamContent">
-                        <div class="teamImgBx"><img src="/ems/webpage/user1.jpg"></div>
+                        <div class="teamImgBx"><img src="webpage/user1.jpg"></div>
                         <div class="teamContentBx">
                             <h3>Krishnanunni M<br><span>Program Cordinator</span></h3>
                         </div>
@@ -247,7 +247,7 @@
                 </div>
                 <div class="teamCard">
                     <div class="teamContent">
-                        <div class="teamImgBx"><img src="/ems/webpage/user2.jpg"></div>
+                        <div class="teamImgBx"><img src="webpage/user2.jpg"></div>
                         <div class="teamContentBx">
                             <h3>Don C John<br><span>Marketing </span></h3>
                         </div>
@@ -266,7 +266,7 @@
                 </div>
                 <div class="teamCard">
                     <div class="teamContent">
-                        <div class="teamImgBx"><img src="/ems/webpage/user3.jpg"></div>
+                        <div class="teamImgBx"><img src="webpage/user3.jpg"></div>
                         <div class="teamContentBx">
                             <h3>Haritha Ashok<br><span>Creative Designer</span></h3>
                         </div>
@@ -285,7 +285,7 @@
                 </div>
                 <div class="teamCard">
                     <div class="teamContent">
-                        <div class="teamImgBx"><img src="/ems/webpage/user4.jpg"></div>
+                        <div class="teamImgBx"><img src="webpage/user4.jpg"></div>
                         <div class="teamContentBx">
                             <h3>Jibin P S<br><span>Technical Head</span></h3>
                         </div>
