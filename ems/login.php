@@ -1,5 +1,6 @@
 <?php
 
+        session_start();
         $pdo = new PDO('mysql:host=localhost;port=3306;dbname=event_manage_sys', 'root', 'root');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -26,7 +27,7 @@
             }
             else
             {
-                
+                $_SESSION['status'] = "Password Mismatch";
             }
         }
         
@@ -43,6 +44,27 @@
 <body>
     <section>
         <div class="container">
+            <div class="user signupBx">
+                <div class="formBx">
+                    <form action="login.php" method="POST" autocomplete="off">
+                        <h2>Create an Account</h2>
+                        <input type="text" name="username" placeholder="Username">
+                        <input type="email" name="email" placeholder="Email Address">
+                        <input type="password" name="password" placeholder="Create Password">
+                        <input type="password" name="cpassword" placeholder="Confirm Password">
+                        <input type="submit" name="" value="Sign-Up">
+                        <?php
+                        if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+                        {
+                            echo '<p class="signup"> '.$_SESSION['status'].' </p>';
+                            unset($_SESSION['status']);
+                        }
+                        ?>
+                        <p class="signup">Already have an account ? <a href="#" onclick="toggleForm();">Sign-In</a></p>
+                    </form>
+                </div>
+                <div class="imgBx"><img src="webpage/register.jpg"></div>
+            </div>
             <div class="user signinBx">
                 <div class="imgBx"><img src="webpage/login.jpg"></div>
                 <div class="formBx">
@@ -54,20 +76,6 @@
                         <p class="signup">Dont have an account ? <a href="#" onclick="toggleForm();">Sign-Up</a></p>
                     </form>
                 </div>
-            </div>
-            <div class="user signupBx">
-                <div class="formBx">
-                    <form action="login.php" method="POST" autocomplete="off">
-                        <h2>Create an Account</h2>
-                        <input type="text" name="username" placeholder="Username">
-                        <input type="email" name="email" placeholder="Email Address">
-                        <input type="password" name="password" placeholder="Create Password">
-                        <input type="password" name="cpassword" placeholder="Confirm Password">
-                        <input type="submit" name="" value="Sign-Up">
-                        <p class="signup">Already have an account ? <a href="#" onclick="toggleForm();">Sign-In</a></p>
-                    </form>
-                </div>
-                <div class="imgBx"><img src="webpage/register.jpg"></div>
             </div>
         </div>
     </section>

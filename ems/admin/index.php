@@ -1,11 +1,9 @@
 <?php
     
-    $pdo = new PDO('mysql:host=localhost;port=3306;dbname=event_manage_sys', 'root', 'root');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $connection = mysqli_connect("localhost", 'root', 'root', 'event_manage_sys');
+    $query = "SELECT * FROM users";
+    $query_run = mysqli_query($connection,$query);
 
-    $statement = $pdo->prepare('SELECT * FROM users');
-    $statement->execute();
-    $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -90,21 +88,23 @@
       <table class="content-table">
           <thead>
               <tr>
-                  <th scope="col">#</th>
+                  <th scope="col">User ID</th>
                   <th scope="col">Username</th>
                   <th scope="col">E-mail</th>
                   <th scope="col">Usertype</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($users as $i => $user) : ?>
-                    <tr>
-                        <th scope="row"><?php echo $i + 1 ?></th>
-                        <td><?php echo $user['username'] ?></td>
-                        <td><?php echo $user['email'] ?></td>
-                        <td><?php echo $user['usertype'] ?></td>
-                    </tr>
-                <?php endforeach; ?>
+                <?php if(mysqli_num_rows($query_run) > 0) : ?>
+                    <?php while($row = mysqli_fetch_assoc($query_run)) : ?>
+                        <tr>
+                            <td><?php echo $row['user_id']; ?></td>
+                            <td><?php echo $row['username']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['usertype']; ?></td>
+                        </td>
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </tbody>
         </table>
   </body>

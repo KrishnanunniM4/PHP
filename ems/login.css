@@ -103,35 +103,36 @@ section .container .user .formBx form .signup a {
     text-decoration: none;
     color: #677eff;
 }
-section .container .signupBx {
+section .container .signinBx {
     pointer-events: none;
 }
-section .container.active .signupBx {
+section .container.active .signinBx {
     pointer-events: initial;
 }
-section .container .signupBx .formBx {
-    left: 100%;
-}
-section .container.active .signupBx .formBx {
-    left: 0;
-}
-section .container .signupBx .imgBx {
-    left: -100%;
-}
-section .container.active .signupBx .imgBx {
-    left: 0;
-}
-
 
 section .container .signinBx .formBx {
-    left: 0;
-}
-section .container.active .signinBx .formBx {
     left: 100%;
 }
-section .container .signinBx .imgBx {
+section .container.active .signinBx .formBx {
     left: 0;
 }
+section .container .signinBx .imgBx {
+    left: -100%;
+}
 section .container.active .signinBx .imgBx {
+    left: 0;
+}
+
+
+section .container .signupBx .formBx {
+    left: 0;
+}
+section .container.active .signupBx .formBx {
+    left: 100%;
+}
+section .container .signupBx .imgBx {
+    left: 0;
+}
+section .container.active .signupBx .imgBx {
     left: -100%;
 }
