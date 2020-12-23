@@ -35,7 +35,7 @@
                 <a href="#sponsors">Sponsors</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
-                <a href="#">Sign-In</a>
+                <a href="login.php" target="_blank">Sign-In</a>
             </div>
         </div>
     </nav>

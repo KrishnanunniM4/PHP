@@ -74,7 +74,7 @@
                     <td><?php echo $event['reg_end'] ?></td>
                     <td><?php echo $event['reg_fees'] ?></td>
                     <td>
-                        <a href="index.php?id=<?php echo $event['id'] ?>" class="btn btn-sm btn-outline-warning">Publish</a>
+                        <!--<a href="index.php?id=<?php echo $event['id'] ?>" class="btn btn-sm btn-outline-warning">Publish</a>-->
                         <a href="update.php?id=<?php echo $event['id'] ?>" class="btn btn-sm btn-outline-success">Update</a>
                         <form style="display: inline-block" method="post" action="delete.php">
                             <input type="hidden" name="id" value="<?php echo $event['id'] ?>">
