@@ -1,9 +1,19 @@
+<?php
+    
+    $pdo = new PDO('mysql:host=localhost;port=3306;dbname=event_manage_sys', 'root', 'root');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $statement = $pdo->prepare('SELECT * FROM users');
+    $statement->execute();
+    $users = $statement->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="adminstyle.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -74,6 +84,29 @@
             </div>
         </div>
     </section>
+    <div class="table-heading">
+        <h3>Registered <span>Users</span></h3>
+      </div>
+      <table class="content-table">
+          <thead>
+              <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">E-mail</th>
+                  <th scope="col">Usertype</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($users as $i => $user) : ?>
+                    <tr>
+                        <th scope="row"><?php echo $i + 1 ?></th>
+                        <td><?php echo $user['username'] ?></td>
+                        <td><?php echo $user['email'] ?></td>
+                        <td><?php echo $user['usertype'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
   </body>
   <script type="text/javascript">
     $('.count').each(function(){
@@ -89,4 +122,3 @@
     });
   </script>
 </html>
-
