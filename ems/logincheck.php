@@ -16,7 +16,7 @@
 
         if($usertypes['usertype'] == 'admin')
         {
-            header('Location: event.php');
+            header('Location: admin/index.php');
         }
         else if($usertypes['usertype'] == 'user')
         {

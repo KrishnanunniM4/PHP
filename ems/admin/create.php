@@ -112,7 +112,9 @@
   </head>
     
   <body>
-
+    <p>
+        <a href="index.php" class="btn btn-secondary">Go Back To Dashboard</a>
+    </p>
     <h1>Add New Event</h1>
 
     <?php if (!empty($errors)) : ?>

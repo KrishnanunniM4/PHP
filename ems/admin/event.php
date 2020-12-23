@@ -30,10 +30,10 @@
     <title>Manage Events</title>
   </head>
   <body>
-    <h1>Manage Events</h1>
     <p>
-        <a href="create.php" class="btn btn-success">Add New Event</a>
+        <a href="index.php" class="btn btn-secondary">Go Back To Dashboard</a>
     </p>
+    <h1>Manage Events</h1>
     <form action="" method="get">
         <div class="input-group mb-3">
             <input type="text" name="search" class="form-control" placeholder="Search for Event Name" value="<?php echo $search ?>">
