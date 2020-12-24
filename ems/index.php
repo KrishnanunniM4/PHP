@@ -1,5 +1,8 @@
 <?php
     session_start();
+    $connection = mysqli_connect("localhost", 'root', 'root', 'event_manage_sys');
+    $query = "SELECT * FROM events";
+    $query_run = mysqli_query($connection,$query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,78 +85,28 @@
         <h2 class="heading" style="text-align: center;" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:500px;">Events</h2>
         <p class="text" style="text-align: center;" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:500px;">Engage in mind boggling competitions designed to test your capabilities and knowledge and advance the fields of Technology and Science like never before!</p>
         <div class="container">
-            <div class="card" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-400px;">
-                <div class="cardBx">
-                    <img src="webpage/program.jpg">
-                </div>
-                <div class="cardContent">
-                    <div>
-                        <h3>World Programming Championship</h3>
-                        <p>Put on your coding caps as techfest brings to you World Programming Championship with an exclusive chance to test your problem solving, logical thinking and coding skills and compete with world's best in competetive coding.</p>
-                        <a href="#">Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card" data-center-center="opacity:1;bottom:0;" data-0-bottom="opacity:0;bottom:-400px;">
-                <div class="cardBx">
-                    <img src="webpage/stock.jpg">
-                </div>
-                <div class="cardContent">
-                    <div>
-                        <h3>TradeMaster</h3>
-                        <p>Trade just like in the real world stock market and show-off your trading skills to everyone. Participants have to make an online portfolio in the currency derivatives segment, with the limited amount provided to them.</p>
-                        <a href="#">Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:-400px;">
-                <div class="cardBx">
-                    <img src="webpage/gamedev.png">
-                </div>
-                <div class="cardContent">
-                    <div>
-                        <h3>Game Begetter</h3>
-                        <p>Participants have a unique opportunity for enthusiastic game developers to showcase their interactive play systems and designs. Participants are supposed to pick a genre and create a game that the new gaming world finds highly addictive.</p>
-                        <a href="#">Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-400px;">
-                <div class="cardBx">
-                    <img src="webpage/smartui.jpg">
-                </div>
-                <div class="cardContent">
-                    <div>
-                        <h3>Smart UI</h3>
-                        <p>Participants have to develop a code which generates a json file showing various elements on the image obtained from the webpage such as their position, type, colour etc.</p>
-                        <a href="#">Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card" data-center-center="opacity:1;bottom:0;" data-0-bottom="opacity:0;bottom:-400px;">
-                <div class="cardBx">
-                    <img src="webpage/cozmo.jpg">
-                </div>
-                <div class="cardContent">
-                    <div>
-                        <h3>Cozmo Clench</h3>
-                        <p>Your team must build a gripper bot and an obstacle course, and manueuver the bot to do simple task and overcome the obstacle course on a live zoom call. Participants can make wired or wireless gripper bot.</p>
-                        <a href="#">Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:-400px;">
-                <div class="cardBx">
-                    <img src="webpage/olympiad.jpg">
-                </div>
-                <div class="cardContent">
-                    <div>
-                        <h3>Techfest Olympiad</h3>
-                        <p>Students are required to solve basic science, mental aptitude, and practical life problems. Participants have to solve maximum questions in a specified time interval in the most efficient way.</p>
-                        <a href="#">Details</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+                $no = 1;
+                if(mysqli_num_rows($query_run) > 0) {
+                    while($row = mysqli_fetch_assoc($query_run)) {
+                        ?>
+                        <div class="card">
+                            <div class="cardBx">
+                                <img src="ems/<?php echo $row['thumbnail_img']; ?>">
+                            </div>
+                            <div class="cardContent">
+                                <div>
+                                    <h3><?php echo $row['event_name']; ?></h3>
+                                    <p><?php echo $row['description']; ?></p>
+                                    <a href="#">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php 
+                        $no++;
+                    }
+                }
+            ?> 
         </div>
     </section>
     <br>

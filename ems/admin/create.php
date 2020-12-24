@@ -59,15 +59,15 @@
             $errors[] = 'Registration Fees is Required';
         }
 
-        if (!is_dir('images')) {
-            mkdir('images');
+        if (!is_dir('../images')) {
+            mkdir('../images');
         }
         if (empty($errors))
         {
             $thumbnail_img = $_FILES['thumbnail_img'] ?? null;
             $imagePath = '';
             if ($thumbnail_img && $thumbnail_img['tmp_name']) {
-                $imagePath = 'images/'.randomString(8).'/'.$thumbnail_img['name'];
+                $imagePath = '../'.'images/'.randomString(8).'/'.$thumbnail_img['name'];
                 mkdir(dirname($imagePath));
                 move_uploaded_file($thumbnail_img['tmp_name'], $imagePath);
             }

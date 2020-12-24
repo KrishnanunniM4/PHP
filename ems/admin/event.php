@@ -15,7 +15,7 @@
     }
     else
     {
-        $statement = $pdo->prepare('SELECT * FROM events ORDER BY event_id ASC');
+        $statement = $pdo->prepare('SELECT * FROM events ORDER BY event_id DESC');
     }
     $statement->execute();
     $events = $statement->fetchAll(PDO::FETCH_ASSOC);
