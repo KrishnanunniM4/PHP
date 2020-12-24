@@ -7,7 +7,7 @@
 section {
     position: relative;
     min-height: 100vh;
-    background: url("webpage/loginbg.jpg");
+    background: url("../webpage/loginbg.jpg");
     display: flex;
     align-items: center;
     justify-content: center;
