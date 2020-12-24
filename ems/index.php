@@ -41,12 +41,12 @@
                     if(isset($_SESSION['username']) && $_SESSION['username'] !='')
                     {
                         echo '<a> '.$_SESSION['username'].' </a>';
-                        echo '<a href="login.php">Logout</a>';
+                        echo '<a href="#">Logout</a>';
                         unset($_SESSION['username']);
                     }
                     else
                     {
-                        echo '<a href="login.php" target="_blank">Sign-In</a>';
+                        echo '<a href="admin/login.php" target="_blank">Sign-In</a>';
                     }
                 ?>
             </div>

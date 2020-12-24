@@ -63,10 +63,10 @@
                         <p class="signup">Already have an account ? <a href="#" onclick="toggleForm();">Sign-In</a></p>
                     </form>
                 </div>
-                <div class="imgBx"><img src="webpage/register.jpg"></div>
+                <div class="imgBx"><img src="../webpage/register.jpg"></div>
             </div>
             <div class="user signinBx">
-                <div class="imgBx"><img src="webpage/login.jpg"></div>
+                <div class="imgBx"><img src="../webpage/login.jpg"></div>
                 <div class="formBx">
                     <form action="logincheck.php" method="POST" autocomplete="off">
                         <h2>Sign-In</h2>

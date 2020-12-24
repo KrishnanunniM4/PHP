@@ -17,12 +17,12 @@
         if($usertypes['usertype'] == 'admin')
         {
             $_SESSION['username'] = $lusername;
-            header('Location: admin/index.php');
+            header('Location: index.php');
         }
         else if($usertypes['usertype'] == 'user')
         {
             $_SESSION['username'] = $lusername;
-            header('Location: index.php');
+            header('Location: ../index.php');
         }
         else
         {

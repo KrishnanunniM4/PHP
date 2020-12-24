@@ -2,7 +2,7 @@
     session_start();
     if(!$_SESSION['username'])
     {
-        header('Location: ems/login.php');
+        header('Location: login.php');
     }
     $connection = mysqli_connect("localhost", 'root', 'root', 'event_manage_sys');
     $query = "SELECT * FROM users";
