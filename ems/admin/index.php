@@ -31,7 +31,9 @@
         <h3>Aquila '20 <span>Admin</span></h3>
       </div>
       <div class="right_area">
-        <a href="#" class="logout_btn">Logout</a>
+        <form action="logincheck.php" method="POST">
+            <button name="logout_btn" class="logout_btn">Logout</button>
+        </form>
       </div>
     </header>
     <!--header area end-->
@@ -43,7 +45,6 @@
             if(isset($_SESSION['username']) && $_SESSION['username'] !='')
             {
                 echo '<h4> '.$_SESSION['username'].' </h4>';
-                unset($_SESSION['username']);
             }
             else
             {

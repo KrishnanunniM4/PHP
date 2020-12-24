@@ -25,11 +25,6 @@
     <nav class="navbar">
         <div class="inner-width">
             <a href="#" class="logo"></a>
-            <button class="menu-toggler">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <div class="navbar-menu">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -40,13 +35,14 @@
                 <?php
                     if(isset($_SESSION['username']) && $_SESSION['username'] !='')
                     {
-                        echo '<a> '.$_SESSION['username'].' </a>';
-                        echo '<a href="#">Logout</a>';
-                        unset($_SESSION['username']);
+                        echo '<a> '.$_SESSION['username'].' </a>'; 
+                        echo '<form action="admin/logincheck.php" method="POST">
+                                <button name="home_logout">Logout</button>
+                              </form>';    
                     }
                     else
                     {
-                        echo '<a href="admin/login.php" target="_blank">Sign-In</a>';
+                        echo '<a href="admin/login.php">Sign-In</a>';
                     }
                 ?>
             </div>

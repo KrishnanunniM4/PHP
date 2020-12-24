@@ -1,5 +1,9 @@
 <?php
-
+    session_start();
+    if(!$_SESSION['username'])
+    {
+        header('Location: login.php');
+    }
     $pdo = new PDO('mysql:host=localhost;port=3306;dbname=event_manage_sys', 'root', 'root');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

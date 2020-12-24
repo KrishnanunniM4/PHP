@@ -29,6 +29,8 @@ header {
   padding: 5px;
   background: #19b3d3;
   text-decoration: none;
+  outline: none;
+  border: none;
   float: right;
   margin-top: -30px;
   margin-right: 40px;
@@ -40,9 +42,6 @@ header {
   transition-property: background;
 }
 
-.logout_btn:hover {
-  background: #0b87a6;
-}
 
 .sidebar {
   background: #2f323a;
