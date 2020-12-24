@@ -26,25 +26,24 @@
         <div class="inner-width">
             <a href="#" class="logo"></a>
             <div class="navbar-menu">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#events">Events</a>
-                <a href="#sponsors">Sponsors</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact">Contact</a>
-                <?php
-                    if(isset($_SESSION['username']) && $_SESSION['username'] !='')
-                    {
-                        echo '<a> '.$_SESSION['username'].' </a>'; 
-                        echo '<form action="admin/logincheck.php" method="POST">
-                                <button name="home_logout">Logout</button>
-                              </form>';    
-                    }
-                    else
-                    {
-                        echo '<a href="admin/login.php">Sign-In</a>';
-                    }
-                ?>
+                <form action="admin/logincheck.php" method="POST">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#events">Events</a>
+                    <a href="#sponsors">Sponsors</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Contact</a>
+                    <?php
+                        if(isset($_SESSION['username']) && $_SESSION['username'] !='')
+                        {
+                            echo '<a> '.$_SESSION['username'].' </a>' .'<button name="home_logout">Logout</button>'; 
+                        }
+                        else
+                        {
+                            echo '<a href="admin/login.php">Sign-In</a>';
+                        }
+                    ?>
+                </form>
             </div>
         </div>
     </nav>
