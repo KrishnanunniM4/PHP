@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +37,18 @@
                 <a href="#sponsors">Sponsors</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
-                <a href="login.php" target="_blank">Sign-In</a>
+                <?php
+                    if(isset($_SESSION['username']) && $_SESSION['username'] !='')
+                    {
+                        echo '<a> '.$_SESSION['username'].' </a>';
+                        echo '<a href="login.php">Logout</a>';
+                        unset($_SESSION['username']);
+                    }
+                    else
+                    {
+                        echo '<a href="login.php" target="_blank">Sign-In</a>';
+                    }
+                ?>
             </div>
         </div>
     </nav>

@@ -1,5 +1,9 @@
 <?php
-    
+    session_start();
+    if(!$_SESSION['username'])
+    {
+        header('Location: ems/login.php');
+    }
     $connection = mysqli_connect("localhost", 'root', 'root', 'event_manage_sys');
     $query = "SELECT * FROM users";
     $query_run = mysqli_query($connection,$query);
@@ -35,7 +39,17 @@
     <div class="sidebar">
       <center>
         <img src="user1.jpg" class="profile_image" alt="">
-        <h4>Admin</h4>
+        <?php
+            if(isset($_SESSION['username']) && $_SESSION['username'] !='')
+            {
+                echo '<h4> '.$_SESSION['username'].' </h4>';
+                unset($_SESSION['username']);
+            }
+            else
+            {
+                echo '<h4>Admin</h4>';
+            }
+        ?>
       </center>
       <a href="index.php"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
       <a href="event.php"><i class="fas fa-cogs"></i><span>Manage Events</span></a>
