@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     $con = mysqli_connect('localhost', 'root', 'root', 'event_manage_sys');
 
     $lusername = '';
