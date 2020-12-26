@@ -115,7 +115,38 @@
                         $no++;
                     }
                 }
-            ?> 
+            ?>
+            <?php
+            $lmobile = '';
+            $lusername = '';
+            $lmobile = $_SESSION['mobile'] ;
+            $lusername = $_SESSION['username'] ;
+            if(isset($_SESSION['username']) && $_SESSION['username'] !='')
+            {
+                echo '<h2 class="heading">Your Registered Events</h2>';
+                $regs = "SELECT * FROM registrations WHERE mobile = '$lmobile' AND username = '$lusername'";
+                $regs_run = mysqli_query($connection,$regs);
+                $no = 1;
+                if(mysqli_num_rows($regs_run) > 0) {
+                    while($reg = mysqli_fetch_assoc($regs_run)) {
+                        ?>
+                        <div class="card">
+                            <div class="cardBx">
+                                <img src="ems/<?php echo $reg['thumbnail_img']; ?>">
+                            </div>
+                            <div class="cardContent">
+                                <div>
+                                    <h3><?php echo $reg['event_name']; ?></h3>
+                                    <p><?php echo $reg['event_id']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                        <?php 
+                        $no++;
+                    }
+                }
+            }
+            ?>
         </div>
     </section>
     <br>
