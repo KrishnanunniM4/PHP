@@ -75,6 +75,7 @@
                     <form action="logincheck.php" method="POST" autocomplete="off">
                         <h2>Sign-In</h2>
                         <input type="text" name="lusername" placeholder="Username">
+                        <input type="text" name="lmobile" placeholder="Mobile No.">
                         <input type="password" name="lpassword" placeholder="Password">
                         <input type="submit" name="" value="Login">
                         <p class="signup">Dont have an account ? <a href="#" onclick="toggleForm();">Sign-Up</a></p>

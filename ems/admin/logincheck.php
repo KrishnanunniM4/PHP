@@ -4,11 +4,13 @@
 
     $lusername = '';
     $lpassword = '';
+    $lmobile = '';
 
     if($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         $lusername = $_POST['lusername'];
         $lpassword = $_POST['lpassword'];
+        $lmobile = $_POST['lmobile'];
 
         $query = "SELECT * FROM users WHERE username = '$lusername' AND password = '$lpassword' ";
         $query_run = mysqli_query($con,$query);
@@ -16,11 +18,13 @@
 
         if($usertypes['usertype'] == 'admin')
         {
+            $_SESSION['mobile'] = $lmobile;
             $_SESSION['username'] = $lusername;
             header('Location: index.php');
         }
         else if($usertypes['usertype'] == 'user')
         {
+            $_SESSION['mobile'] = $lmobile;
             $_SESSION['username'] = $lusername;
             header('Location: ../index.php');
         }
@@ -34,6 +38,7 @@
     {
         session_destroy();
         unset($_SESSION['username']);
+        unset($_SESSION['mobile']);
         header('Location: login.php');
     }
 
@@ -41,6 +46,7 @@
     {
         session_destroy();
         unset($_SESSION['username']);
+        unset($_SESSION['mobile']);
         header('Location: ../index.php.');
     }
 ?>
