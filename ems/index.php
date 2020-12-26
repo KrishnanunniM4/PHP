@@ -98,7 +98,16 @@
                                 <div>
                                     <h3><?php echo $row['event_name']; ?></h3>
                                     <p><?php echo $row['description']; ?></p>
-                                    <a href="#">Details</a>
+                                    <?php
+                                        if(isset($_SESSION['username']) && $_SESSION['username'] !='')
+                                        {
+                                            echo '<a href="register.php?id='.$row['event_id'].'">Details</a>';
+                                        }
+                                        else
+                                        {
+                                            echo '<a href="admin/login.php">Details</a>';
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
