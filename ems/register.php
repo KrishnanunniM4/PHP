@@ -1,14 +1,52 @@
 <?php
 
     session_start();
-    $connection = mysqli_connect("localhost", 'root', 'root', 'event_manage_sys');
+    $pdo = new PDO('mysql:host=localhost;port=3306;dbname=event_manage_sys', 'root', 'root');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $id = $_GET['id'] ?? null;
 
-    $events = "SELECT * FROM events WHERE event_id = '$id' ";
-    $events_run = mysqli_query($connection,$events);
-    $event = mysqli_fetch_assoc($events_run);
+    $statement = $pdo->prepare('SELECT * FROM events WHERE event_id = :id');
+    $statement->bindValue(':id', $id);
+    $statement->execute();
+    $event = $statement->fetch(PDO::FETCH_ASSOC);
 
+    $event_id = '';
+    $username = '';
+    $mobile = '';
+    $event_location = '';
+    $event_start = '';
+    $event_end = '';
+    $reg_start = '';
+    $reg_end = '';
+    $reg_fees = '';
 
+    if($_SERVER['REQUEST_METHOD'] === 'POST')
+    {
+        $event_id = $_POST['event_id'];
+        $username = $_POST['username'];
+        $mobile = $_POST['mobile'];
+        $event_location = $_POST['event_location'];
+        $event_start = $_POST['event_start'];
+        $event_end = $_POST['event_end'];
+        $reg_start = $_POST['reg_start'];
+        $reg_end = $_POST['reg_end'];
+        $reg_fees = $_POST['reg_fees'];
+
+        $statement = $pdo->prepare("INSERT INTO registrations (event_id, username, mobile, event_location, event_start, event_end, reg_start, reg_end, reg_fees)
+        VALUES (:event_id, :username, :mobile, :event_location, :event_start, :event_end, :reg_start, :reg_end, :reg_fees)");
+        $statement->bindValue(':event_id', $event_id);                           
+        $statement->bindValue(':username', $username);
+        $statement->bindValue(':mobile', $mobile);
+        $statement->bindValue(':event_location', $event_location);
+        $statement->bindValue(':event_start', $event_start);
+        $statement->bindValue(':event_end', $event_end);
+        $statement->bindValue(':reg_start', $reg_start);
+        $statement->bindValue(':reg_end', $reg_end);
+        $statement->bindValue(':reg_fees', $reg_fees);
+        $statement->execute();
+        header('Location: index.php');
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +62,7 @@
         <div class="container">
             <div class="user signupBx">
                 <div class="formBx">
-                    <form action="" method="POST" autocomplete="off">
+                    <form action="register.php" method="POST" autocomplete="off">
                         <h2>Event Registration : <b><?php echo $event['event_name']?></b></h2>
                         <label>Name:</label><input type="text" name="username" value="<?php echo $_SESSION['username'] ?>">
                         <label>Mobile No:</label><input type="text" name="mobile" value="<?php echo $_SESSION['mobile'] ?>">
