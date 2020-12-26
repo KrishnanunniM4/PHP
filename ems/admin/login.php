@@ -6,7 +6,7 @@
 
         $username = '';
         $email = '';
-        $phone = '';
+        $mobile = '';
         $password = '';
         $cpassword = '';
 
@@ -14,16 +14,16 @@
         {
             $username = $_POST['username'];
             $email = $_POST['email'];
-            $phone = $_POST['phone'];
+            $mobile = $_POST['mobile'];
             $password = $_POST['password'];
             $cpassword = $_POST['cpassword'];
 
             if ($password === $cpassword)
             {
-                $statement = $pdo->prepare("INSERT INTO users (username, email, phone, password) VALUES (:username, :email, :phone, :password)");
+                $statement = $pdo->prepare("INSERT INTO users (username, email, mobile, password) VALUES (:username, :email, :mobile, :password)");
                 $statement->bindValue(':username', $username);                           
                 $statement->bindValue(':email', $email);
-                $statement->bindValue(':phone', $phone);
+                $statement->bindValue(':mobile', $mobile);
                 $statement->bindValue(':password', $password);
                 $statement->execute();
                 header('Location: login.php');
@@ -53,7 +53,7 @@
                         <h2>Create an Account</h2>
                         <input type="text" name="username" placeholder="Username">
                         <input type="email" name="email" placeholder="Email Address">
-                        <input type="text" name="phone" placeholder="Mobile No.">
+                        <input type="text" name="mobile" placeholder="Mobile No.">
                         <input type="password" name="password" placeholder="Create Password">
                         <input type="password" name="cpassword" placeholder="Confirm Password">
                         <input type="submit" name="" value="Sign-Up">

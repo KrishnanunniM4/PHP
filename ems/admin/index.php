@@ -55,7 +55,7 @@
       <a href="index.php"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
       <a href="event.php"><i class="fas fa-cogs"></i><span>Manage Events</span></a>
       <a href="create.php"><i class="fas fa-table"></i><span>Add Events</span></a>
-      <a href="#"><i class="fas fa-th"></i><span>Forms</span></a>
+      <a href="eventreg.php"><i class="fas fa-th"></i><span>Event Registrations</span></a>
       <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
       <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
     </div>
@@ -117,7 +117,7 @@
                             <td><?php echo $row['user_id']; ?></td>
                             <td><?php echo $row['username']; ?></td>
                             <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['phone']; ?></td>
+                            <td><?php echo $row['mobile']; ?></td>
                             <td><?php echo $row['usertype']; ?></td>
                         </td>
                     <?php endwhile; ?>
