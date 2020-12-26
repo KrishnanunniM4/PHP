@@ -106,6 +106,7 @@
                   <th scope="col">User ID</th>
                   <th scope="col">Username</th>
                   <th scope="col">E-mail</th>
+                  <th scope="col">Mobile No.</th>
                   <th scope="col">Usertype</th>
                 </tr>
             </thead>
@@ -116,6 +117,7 @@
                             <td><?php echo $row['user_id']; ?></td>
                             <td><?php echo $row['username']; ?></td>
                             <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['phone']; ?></td>
                             <td><?php echo $row['usertype']; ?></td>
                         </td>
                     <?php endwhile; ?>
