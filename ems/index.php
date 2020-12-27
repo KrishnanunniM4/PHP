@@ -39,7 +39,7 @@
                     <?php
                         if(isset($_SESSION['username']) && $_SESSION['username'] !='')
                         {
-                            echo '<a> '.$_SESSION['username'].' </a>' .'<button name="home_logout">Logout</button>'; 
+                            echo '<a href="#regevents"> '.$_SESSION['username'].' </a>' .'<button name="home_logout">Logout</button>'; 
                         }
                         else
                         {
@@ -116,39 +116,54 @@
                     }
                 }
             ?>
-            <?php
-            $lmobile = '';
-            $lusername = '';
-            $lmobile = $_SESSION['mobile'] ;
-            $lusername = $_SESSION['username'] ;
+        </div>
+    </section>
+    <section class="regevents" id="regevents">
+        <?php
             if(isset($_SESSION['username']) && $_SESSION['username'] !='')
             {
                 echo '<h2 class="heading">Your Registered Events</h2>';
-                $regs = "SELECT * FROM registrations WHERE mobile = '$lmobile' AND username = '$lusername'";
-                $regs_run = mysqli_query($connection,$regs);
-                $no = 1;
-                if(mysqli_num_rows($regs_run) > 0) {
-                    while($reg = mysqli_fetch_assoc($regs_run)) {
-                        ?>
-                        <div class="card">
-                            <div class="cardBx">
-                                <img src="ems/<?php echo $reg['thumbnail_img']; ?>">
-                            </div>
-                            <div class="cardContent">
-                                <div>
-                                    <h3><?php echo $reg['event_name']; ?></h3>
-                                    <p><?php echo $reg['event_id']; ?></p>
+            }
+        ?>
+        <div class="container">
+            <?php
+                if(isset($_SESSION['username']) && $_SESSION['username'] !='')
+                {
+                    $lmobile = '';
+                    $lusername = '';
+                    $lmobile = $_SESSION['mobile'] ;
+                    $lusername = $_SESSION['username'] ;
+                    $regs = "SELECT * FROM registrations WHERE mobile = '$lmobile' AND username = '$lusername'";
+                    $regs_run = mysqli_query($connection,$regs);
+                    $no = 1;
+                    if(mysqli_num_rows($regs_run) > 0) {
+                        while($reg = mysqli_fetch_assoc($regs_run)) {
+                            ?>
+                            <div class="card">
+                                <div class="cardBx">
+                                    <img src="webpage/regevent.jpg">
+                                </div>
+                                <div class="cardContent">
+                                    <div>
+                                        <h3><?php echo $reg['event_name']; ?></h3>
+                                        <p>Registration ID : <?php echo $reg['reg_id']; ?></p>
+                                        <p>Event ID : <?php echo $reg['event_id']; ?></p>
+                                        <p>Event Location : <?php echo $reg['event_location']; ?></p>
+                                        <p>Event Start Date : <?php echo $reg['event_start']; ?></p>
+                                        <p>Event End Date : <?php echo $reg['event_end']; ?></p>
+                                        <p>Registration Fees : <?php echo $reg['reg_fees']; ?></p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <?php 
-                        $no++;
+                            <?php 
+                            $no++;
+                        }
                     }
                 }
-            }
             ?>
         </div>
     </section>
+    <br>
     <br>
     <br>
     <br>

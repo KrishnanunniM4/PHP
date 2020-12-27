@@ -30,9 +30,9 @@
   justify-content: space-between;
 }
 .logo {
-  width: 44px;
-  height: 32px;
-  background-image: url("webpage/white-logo.png");
+  width: 50px;
+  height: 39px;
+  background-image: url("webpage/logo_white.png");
   background-size: contain;
 }
 
@@ -65,7 +65,7 @@
   z-index: 1000;
 }
 .sticky .logo {
-  background-image: url("webpage/black-logo.png");
+  background-image: url("webpage/logo_black.png");
 }
 .sticky .navbar-menu a {
   color: #111;
@@ -244,6 +244,76 @@ section video {
   text-decoration: none;
   color: #fff;
 }
+
+
+
+
+.regevents {
+  background: #12222d;
+  padding: 100px;
+}
+.regevents .container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.regevents .container .card {
+  position: relative;
+  background: #fff;
+  height: 250px;
+  display: flex;
+  width: 30%;
+  margin: 50px 0;
+}
+.regevents .container .card .cardBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+.regevents .container .card:hover .cardBx {
+  width: 150px;
+  height: 150px;
+  left: -50px;
+  top: calc(50% - 75px);
+  transition: 0.5s ease-in-out;
+}
+.regevents .container .card .cardContent {
+  position: absolute;
+  right: 0;
+  width: calc(100% - 85px);
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.regevents .container .card .cardContent h3 {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+.regevents .container .card .cardContent a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #333;
+  text-decoration: none;
+  color: #fff;
+}
+
+
+
+
+
 .middle {
   position: absolute;
   top: 50%;

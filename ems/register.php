@@ -13,6 +13,7 @@
     $event_id = '';
     $username = '';
     $mobile = '';
+    $event_name = '';
     $event_location = '';
     $event_start = '';
     $event_end = '';
@@ -25,6 +26,7 @@
         $event_id = $_POST['event_id'];
         $username = $_POST['username'];
         $mobile = $_POST['mobile'];
+        $event_name = $_POST['event_name'];
         $event_location = $_POST['event_location'];
         $event_start = $_POST['event_start'];
         $event_end = $_POST['event_end'];
@@ -32,11 +34,12 @@
         $reg_end = $_POST['reg_end'];
         $reg_fees = $_POST['reg_fees'];
 
-        $statement = $pdo->prepare("INSERT INTO registrations (event_id, username, mobile, event_location, event_start, event_end, reg_start, reg_end, reg_fees)
-        VALUES (:event_id, :username, :mobile, :event_location, :event_start, :event_end, :reg_start, :reg_end, :reg_fees)");
+        $statement = $pdo->prepare("INSERT INTO registrations (event_id, username, mobile, event_name, event_location, event_start, event_end, reg_start, reg_end, reg_fees)
+        VALUES (:event_id, :username, :mobile, :event_name, :event_location, :event_start, :event_end, :reg_start, :reg_end, :reg_fees)");
         $statement->bindValue(':event_id', $event_id);                           
         $statement->bindValue(':username', $username);
         $statement->bindValue(':mobile', $mobile);
+        $statement->bindValue(':event_name', $event_name);
         $statement->bindValue(':event_location', $event_location);
         $statement->bindValue(':event_start', $event_start);
         $statement->bindValue(':event_end', $event_end);
@@ -63,9 +66,10 @@
             <div class="user signupBx">
                 <div class="formBx">
                     <form action="register.php" method="POST" autocomplete="off">
-                        <h2>Event Registration : <b><?php echo $event['event_name']?></b></h2>
+                        <h2>Event Registration : <?php echo $event['event_name'] ?></h2>
                         <label>Name:</label><input type="text" name="username" value="<?php echo $_SESSION['username'] ?>">
                         <label>Mobile No:</label><input type="text" name="mobile" value="<?php echo $_SESSION['mobile'] ?>">
+                        <label>Event Name:</label><input type="text" name="event_name" readonly value="<?php echo $event['event_name'] ?>">
                         <label>Event ID:</label><input type="text" name="event_id" readonly value="<?php echo $event['event_id'] ?>">
                         <label>Event Location:</label><input type="text" name="event_location" readonly  value="<?php echo $event['event_location'] ?>">
                         <label>Event Start Date:</label><input type="date" name="event_start" readonly  value="<?php echo $event['event_start'] ?>">
