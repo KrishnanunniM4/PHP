@@ -27,6 +27,7 @@
                 $statement->bindValue(':password', $password);
                 $statement->execute();
                 header('Location: login.php');
+                $_SESSION['status'] = "Successfully Signedup, Please Sign-in";
             }
             else
             {
@@ -61,7 +62,6 @@
                         if(isset($_SESSION['status']) && $_SESSION['status'] !='')
                         {
                             echo '<p class="signup"> '.$_SESSION['status'].' </p>';
-                            unset($_SESSION['status']);
                         }
                         ?>
                         <p class="signup">Already have an account ? <a href="#" onclick="toggleForm();">Sign-In</a></p>
