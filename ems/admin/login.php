@@ -78,6 +78,7 @@
                         <input type="text" name="lmobile" placeholder="Mobile No.">
                         <input type="password" name="lpassword" placeholder="Password">
                         <input type="submit" name="" value="Login">
+                        <p class="signup">Forgot Password ? <a href="otp.php">Get OTP</a></p>
                         <p class="signup">Dont have an account ? <a href="#" onclick="toggleForm();">Sign-Up</a></p>
                     </form>
                 </div>
