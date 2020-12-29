@@ -18,13 +18,27 @@
 
         if($usertypes['usertype'] == 'admin')
         {
-            $_SESSION['mobile'] = $lmobile;
+            if(isset($_SESSION['mob']) && $_SESSION['mob'] !='')
+            {
+                $_SESSION['mobile'] = $_SESSION['mob'];
+            }
+            else
+            {
+                $_SESSION['mobile'] = $lmobile;
+            }
             $_SESSION['username'] = $lusername;
             header('Location: index.php');
         }
         else if($usertypes['usertype'] == 'user')
         {
-            $_SESSION['mobile'] = $lmobile;
+            if(isset($_SESSION['mob']) && $_SESSION['mob'] !='')
+            {
+                $_SESSION['mobile'] = $_SESSION['mob'];
+            }
+            else
+            {
+                $_SESSION['mobile'] = $lmobile;
+            }
             $_SESSION['username'] = $lusername;
             header('Location: ../index.php');
         }

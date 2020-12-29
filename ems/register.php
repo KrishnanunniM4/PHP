@@ -67,7 +67,7 @@
                 <div class="formBx">
                     <form action="register.php" method="POST" autocomplete="off">
                         <h2>Event Registration : <?php echo $event['event_name'] ?></h2>
-                        <label>Name:</label><input type="text" name="username" value="<?php echo $_SESSION['username'] ?>">
+                        <label>Name:</label><input type="text" name="username" value="">
                         <label>Mobile No:</label><input type="text" name="mobile" value="<?php echo $_SESSION['mobile'] ?>">
                         <label>Event Name:</label><input type="text" name="event_name" readonly value="<?php echo $event['event_name'] ?>">
                         <label>Event ID:</label><input type="text" name="event_id" readonly value="<?php echo $event['event_id'] ?>">

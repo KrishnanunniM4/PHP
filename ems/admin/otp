@@ -4,7 +4,7 @@
         "sender_id" => "FSTSMS",
         "language" => "english",
         "route" => "qt",
-        "numbers" => "7994675048",
+        "numbers" => "$mobile",
         "message" => "42310",
         "variables" => "{#BB#}",
         "variables_values" => "12345"
@@ -39,7 +39,7 @@
     if ($err) {
     echo "cURL Error #:" . $err;
     } else {
-    echo $response;
+    echo '<script>alert("OTP Succesfully Sent to the Registered Mobile Number by '.$response.'")</script>';
     }
 
 ?>
