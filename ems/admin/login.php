@@ -62,6 +62,7 @@
                         if(isset($_SESSION['status']) && $_SESSION['status'] !='')
                         {
                             echo '<p class="signup"> '.$_SESSION['status'].' </p>';
+                            unset($_SESSION['status']);
                         }
                         ?>
                         <p class="signup">Already have an account ? <a href="#" onclick="toggleForm();">Sign-In</a></p>
@@ -78,6 +79,13 @@
                         <input type="text" name="lmobile" placeholder="Mobile No.">
                         <input type="password" name="lpassword" placeholder="Password">
                         <input type="submit" name="" value="Login">
+                        <?php
+                        if(isset($_SESSION['stats']) && $_SESSION['stats'] !='')
+                        {
+                            echo '<p class="signup"> '.$_SESSION['stats'].' </p>';
+                            unset($_SESSION['stats']);
+                        }
+                        ?>
                         <p class="signup">Forgot Password ? <a href="otp.php">Get OTP</a></p>
                         <p class="signup">Dont have an account ? <a href="#" onclick="toggleForm();">Sign-Up</a></p>
                     </form>

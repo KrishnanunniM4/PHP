@@ -44,7 +44,7 @@
         }
         else
         {
-            echo 'invalid credentials';
+            $_SESSION['stats'] = 'Invalid Credentials';
         }
     }
 
