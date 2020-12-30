@@ -225,7 +225,7 @@
                     </div>
                     <div class="col">
                         <i class="fas fa-puzzle-piece"></i>
-                        <div class="num">50</div>
+                        <div class="num">60</div>
                         Events
                     </div>
                     <div class="col">
