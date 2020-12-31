@@ -42,7 +42,6 @@
         <a href="index.php" class="btn btn-secondary">Go Back To Dashboard</a>
     </p>
     <h1>Manage Events</h1>
-
     <table class="table">
         <thead>
             <tr>

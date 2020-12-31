@@ -31,6 +31,10 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>
     <title>Manage Registrations</title>
   </head>
   <body>
@@ -38,14 +42,6 @@
         <a href="index.php" class="btn btn-secondary">Go Back To Dashboard</a>
     </p>
     <h1>Event Registrations</h1>
-    <form action="" method="get">
-        <div class="input-group mb-3">
-            <input type="text" name="search" class="form-control" placeholder="Search for Event ID" value="<?php echo $search ?>">
-            <div class="input-group-append">
-                <button class="btn btn-outline-primary" type="submit">Search</button>
-            </div>
-        </div>
-    </form>
     <table class="table">
         <thead>
             <tr>
@@ -70,5 +66,13 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+    <script>
+        $(document).ready( function () {
+        $('.table').DataTable({
+            ordering: false,
+            lengthMenu: [[10, 15, 20, -1], [10, 15, 20, 'All']]
+        });
+        } );
+    </script>
   </body>
 </html>
