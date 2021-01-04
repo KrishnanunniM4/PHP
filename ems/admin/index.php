@@ -4,7 +4,7 @@
     {
         header('Location: login.php');
     }
-    $connection = mysqli_connect("localhost", 'root', 'root', 'event_manage_sys');
+    $connection = mysqli_connect("localhost", 'learners_krishnanunni', 'krishnanunni', 'learners_krishnanunni');
     $query = "SELECT * FROM users";
     $query_run = mysqli_query($connection,$query);
 
