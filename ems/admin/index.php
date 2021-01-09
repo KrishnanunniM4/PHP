@@ -56,7 +56,7 @@
       <a href="event.php"><i class="fas fa-cogs"></i><span>Manage Events</span></a>
       <a href="create.php"><i class="fas fa-table"></i><span>Add Events</span></a>
       <a href="eventreg.php"><i class="fas fa-th"></i><span>Event Registrations</span></a>
-      <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
+      <a href="../index.php"><i class="fas fa-home"></i><span>Homepage</span></a>
       <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
     </div>
     <!--sidebar end-->

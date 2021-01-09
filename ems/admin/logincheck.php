@@ -61,6 +61,6 @@
         session_destroy();
         unset($_SESSION['username']);
         unset($_SESSION['mobile']);
-        header('Location: ../index.php.');
+        header('Location: ../index.php');
     }
 ?>
